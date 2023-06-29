@@ -1,0 +1,7 @@
+jdk:
+  - openjdk17
+before_install:
+  - ./scripts/prepareJitpackEnvironment.sh
+install:
+  - FILE="-Dfile=cars_sdk-release.arr"
+  - mvn install:install-file $FILE -DgroupId= com.github.RonLulwi -DartifactId=cars_sdk -Dversion=1.0.0 -Dpackaging=arr -DgeneratePom=true
